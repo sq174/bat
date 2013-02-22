@@ -1,3 +1,3 @@
 @echo off
-python getArgv.py test %1
+for %%a in (%*) do python getArgv.py %%a
 pause

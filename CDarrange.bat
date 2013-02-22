@@ -1,3 +1,4 @@
 @echo off
-for %%a in (%*) do echo %%a
+cd /d %~dp0
+for %%a in (%*) do python CDarrange.py %%a
 pause
