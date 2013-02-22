@@ -1,6 +1,6 @@
-import os
+import glob 
 
-files = os.listdir(os.getcwd())
+files = glob.glob('*.log')
 
 for file in files:
     print(file)
