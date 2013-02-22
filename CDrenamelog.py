@@ -22,4 +22,4 @@ for file in files:
     CDfilename = re.sub(" / ", " - ", lines[1], 1)
     print(CDfilename)
     os.rename(file, CDfilename + ".log")
-input()
+#input()

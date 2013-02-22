@@ -31,4 +31,4 @@ for wavfile in wavfiles:
         cuefile.close()
     else:
         print("cueファイルが存在しません")
-input()
+#input()
