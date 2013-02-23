@@ -18,7 +18,8 @@ files = glob.glob('*.flac')
 for file in files:  	#.flacファイルを取得し、.cue .logファイルをまとめてzipに圧縮
     CDfilename = re.sub(".flac", '', file)
     print("zip圧縮:" + CDfilename)
-    zipfiles = glob.glob(CDfilename + ".*")
+    print("zip圧縮:" + re.sub("[\[\]]", '?', CDfilename))
+    zipfiles = glob.glob(re.sub("[\[\]]", '?', CDfilename) + '.*')
     complete = True
     if not CDfilename + ".cue" in zipfiles: #欠損があれば警告
         print("CAUSION:cueファイルが見つかりません")
