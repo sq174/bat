@@ -17,7 +17,7 @@ wavfiles = glob.glob('*.wav')   #wavファイルを取得
 
 for wavfile in wavfiles:
     CDname = re.sub(".wav", '', wavfile)
-    print(CDname)
+    print("flac変換:" + CDname)
     command = ["flac", CDname + ".wav" ]
     subprocess.check_call(command, shell=True)  #外部プログラムで圧縮を実行
     os.remove(CDname + ".wav")
@@ -29,6 +29,7 @@ for wavfile in wavfiles:
         cuefile = open(CDname + ".cue", 'w')
         cuefile.writelines(lines)
         cuefile.close()
+        print("cueファイル書き換え:" + CDname)
     else:
         print("cueファイルが存在しません")
 #input()

@@ -18,7 +18,6 @@ files = glob.glob('*.flac')
 for file in files:  	#.flacファイルを取得し、.cue .logファイルをまとめてzipに圧縮
     CDfilename = re.sub(".flac", '', file)
     print("zip圧縮:" + CDfilename)
-    print("zip圧縮:" + re.sub("[\[\]]", '?', CDfilename))
     zipfiles = glob.glob(re.sub("[\[\]]", '?', CDfilename) + '.*')
     complete = True
     if not CDfilename + ".cue" in zipfiles: #欠損があれば警告
@@ -36,8 +35,9 @@ for file in files:  	#.flacファイルを取得し、.cue .logファイルを�
         print("元のファイルを削除しました")
     else:
         print("元のファイルを残します")
-existfiles = glob.glob('*.*')
+existfiles = glob.glob('*')
 if not existfiles:    #ディレクトリが空ならば，ディレクトリを削除
     os.chdir(sys.path[0])
     os.rmdir(workplace)
+    print("空のディレクトリを削除しました")
 #input()
