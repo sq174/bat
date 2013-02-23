@@ -20,6 +20,6 @@ for file in files:
     lines = f.read().split('\n')
     f.close()
     CDfilename = re.sub(" / ", " - ", lines[1], 1)
-    os.rename(file, CDfilename + ".log")
+    os.rename(file, re.sub("[\"]", ' ', CDfilename) + ".log")
     print("LOGファイル名変更:" + CDfilename)
 #input()
