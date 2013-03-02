@@ -16,7 +16,7 @@ files = glob.glob('*')
 
 num = 0
 for file in files:
-    os.rename(file, "TMP" + str(num).zfill(3))
+    os.rename(file, file + ".tmp")
     num += 1
 
 files = glob.glob('*')
