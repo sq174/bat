@@ -14,12 +14,13 @@ else:
     input()
     exit
 os.chdir(sys.path[0])
-sourcefile = "DUMMY_FILES.zip"
+sourcefile = "dat/DUMMY_FILES.zip"
 
 folders = glob.glob("W:/FILES/*")
 pivot = len(folders)
 for i in range(0, dummynum):
     command = ["7z", "e", sourcefile, "-oW:/FILES/FILES" + str(pivot).zfill(3)]
-    subprocess.check_call(command, shell=True)
+
+    subprocess.check_call(command, shell=True)
     pivot += 1
 input()
