@@ -2,7 +2,6 @@ import sys
 import os
 import glob
 import re
-import zipfile
 import subprocess
 if len(sys.argv) > 1:   # カレントディレクトリの移動 
     if os.path.isfile(sys.argv[1]): #D&Dで渡されたファイル・フォルダのパスに移動する
