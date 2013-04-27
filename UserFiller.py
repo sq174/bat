@@ -18,13 +18,13 @@ else:
 os.chdir(sys.path[0])
 sourcefile = "dat/DUMMY_FILES.zip"
 
-with Timer():
-    folders = glob.glob("W:/FILES/*")
-    pivot = len(folders)
-    for i in range(0, dummynum):
-        command = ["7z", "e", sourcefile, "-oW:/FILES/FILES" + str(pivot).zfill(3)]
-        print("【起動】7zip.exe")
-        subprocess.check_call(command, shell=True)
-        print("【終了】7zip.exe")
-        pivot += 1
-input()
+#with Timer():
+folders = glob.glob("W:/FILES/*")
+pivot = len(folders)
+for i in range(0, dummynum):
+    command = ["7z", "e", sourcefile, "-oW:/FILES/FILES" + str(pivot).zfill(3)]
+    print("【起動】7zip.exe")
+    subprocess.check_call(command, shell=True)
+    print("【終了】7zip.exe")
+    pivot += 1
+#input()
