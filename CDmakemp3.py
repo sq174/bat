@@ -21,7 +21,7 @@ for wavfile in wavfiles:
     print("分割->mp3変換:" + CDname)
     mp3Path = "D:/Users/yk2/Music/" + re.sub("[\\\"<>:/|?* ]", '', CDname)
     if not os.path.isdir(mp3Path):
-        os.mkdir(mp3Path)
+        os.mkdir(mp3Path)   #shntoolは特殊な文字を受け付けないようなので事前に変換している
     command = 'shntool split "' + CDname + '.wav" -f "' + CDname + '.cue" -o "cust ext=mp3 "D:/Programs/lame-3.98.4/x64/lame.exe" --preset insane - -o "' + mp3Path + '/%f"" -t "%n %t" '
     subprocess.check_call(command, shell=True)  #外部プログラムで変換を実行
 #input()
